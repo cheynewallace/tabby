@@ -54,7 +54,7 @@ func (t *Tabby) AddHeader(args ...interface{}) {
 	t.AddSeperator(args)
 }
 
-// AddSeperator will write a new dash seperator line
+// AddSeperator will write a new dash seperator line based on the args length
 func (t *Tabby) AddSeperator(args []interface{}) {
 	var b bytes.Buffer
 	for idx, arg := range args {

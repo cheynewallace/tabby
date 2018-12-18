@@ -11,12 +11,12 @@ Many table libraries out there are overly complicated and packed with features y
 
 Typical examples are writing tables with heading and tab spaced columns, or writing log lines to the terminal with evenly spaced columns
 
-**Example With Heading**
+## Example With Heading
 ```	
-tab := tabby.New()
-tab.AddHeader("NAME", "TITLE", "DEPARTMENT")
-tab.AddLine("John Smith", "Developer", "Engineering")
-tab.Print()
+t := tabby.New()
+t.AddHeader("NAME", "TITLE", "DEPARTMENT")
+t.AddLine("John Smith", "Developer", "Engineering")
+t.Print()
 ```
 
 **Output**
@@ -26,13 +26,13 @@ NAME       TITLE     DEPARTMENT
 John Smith Developer Engineering
 ```
 
-**Example Without Heading**
+## Example Without Heading
 ```	
-tab := tabby.New()
-tab.AddLine("Info:", "WEB", "Success 200")
-tab.AddLine("Info:", "API", "Success 201")
-tab.AddLine("Error:", "DATABASE", "Connection Established")
-tab.Print()
+t := tabby.New()
+t.AddLine("Info:", "WEB", "Success 200")
+t.AddLine("Info:", "API", "Success 201")
+t.AddLine("Error:", "DATABASE", "Connection Established")
+t.Print()
 ```
 
 **Output**
@@ -40,4 +40,9 @@ tab.Print()
 Info:  WEB      Success 200
 Info:  API      Success 201
 Error: DATABASE Connection Established
+```
+
+## Example With Custom tabWriter Config
+```	
+t := tabby.NewCustom(0, 0, 1, ' ', 0)
 ```
