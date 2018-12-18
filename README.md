@@ -5,11 +5,13 @@ A tiny library for super simple GoLang tables
 go get github.com/cheynewallace/tabby
 ```
 
-Tabby is a tiny (around 80 lines of code) libary for writing extremely simple table based terminal output in GoLang. 
+Tabby is a tiny (around 80 lines of code) efficient libary for writing extremely simple table based terminal output in GoLang. 
 
 Many table libraries out there are overly complicated and packed with features you don't need. If you simply want to write clean output to your terminal in table format with minimal effort, Tabby is for you.
 
-Typical examples are writing tables with heading and tab spaced columns, or writing log lines to the terminal with evenly spaced columns
+Typical examples
+* Writing tables with heading and tab spaced columns
+* Writing log lines to the terminal with evenly spaced columns
 
 ## Example With Heading
 ```	
