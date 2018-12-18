@@ -56,7 +56,7 @@ t := tabby.NewCustom(0, 0, 2, ' ', 0)
 ```
 
 ## Full Example
-```
+```go
 package main
 
 import "github.com/cheynewallace/tabby"
