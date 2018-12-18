@@ -1,8 +1,14 @@
 # Tabby
 A tiny library for super simple GoLang tables
 
+**Get Tabby**
 ```
 go get github.com/cheynewallace/tabby
+```
+
+**Import Tabby**
+```
+import "github.com/cheynewallace/tabby"
 ```
 
 Tabby is a tiny (around 80 lines of code) efficient libary for writing extremely simple table based terminal output in GoLang. 
@@ -47,4 +53,18 @@ Error:  DATABASE  Connection Established
 ## Example With Custom tabWriter Config
 ```go	
 t := tabby.NewCustom(0, 0, 2, ' ', 0)
+```
+
+## Full Example
+```
+package main
+
+import "github.com/cheynewallace/tabby"
+
+func main() {
+	t := tabby.New()
+	t.AddHeader("NAME", "TITLE", "DEPARTMENT")
+	t.AddLine("John Smith", "Developer", "Engineering")
+	t.Print()
+}
 ```
