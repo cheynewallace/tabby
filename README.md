@@ -2,12 +2,12 @@
 A tiny library for super simple GoLang tables
 
 **Get Tabby**
-```
+```go
 go get github.com/cheynewallace/tabby
 ```
 
 **Import Tabby**
-```
+```go
 import "github.com/cheynewallace/tabby"
 ```
 
