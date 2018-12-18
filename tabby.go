@@ -15,7 +15,7 @@ type Tabby struct {
 // New returns a new *tabwriter.Writer with default config
 func New() *Tabby {
 	return &Tabby{
-		writer: tabwriter.NewWriter(os.Stdout, 0, 0, 1, ' ', 0),
+		writer: tabwriter.NewWriter(os.Stdout, 0, 0, 2, ' ', 0),
 	}
 }
 

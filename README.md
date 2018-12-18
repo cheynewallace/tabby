@@ -23,9 +23,9 @@ t.Print()
 
 **Output**
 ```
-NAME       TITLE     DEPARTMENT
-----       -----     ----------
-John Smith Developer Engineering
+NAME        TITLE      DEPARTMENT
+----        -----      ----------
+John Smith  Developer  Engineering
 ```
 
 ## Example Without Heading
@@ -39,12 +39,12 @@ t.Print()
 
 **Output**
 ```
-Info:  WEB      Success 200
-Info:  API      Success 201
-Error: DATABASE Connection Established
+Info:   WEB       Success 200
+Info:   API       Success 201
+Error:  DATABASE  Connection Established
 ```
 
 ## Example With Custom tabWriter Config
 ```	
-t := tabby.NewCustom(0, 0, 1, ' ', 0)
+t := tabby.NewCustom(0, 0, 2, ' ', 0)
 ```
