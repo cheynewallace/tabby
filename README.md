@@ -1,5 +1,5 @@
 # Tabby
-A tiny library for super simple GoLang tables
+A tiny library for super simple Golang tables
 
 **Get Tabby**
 ```go
