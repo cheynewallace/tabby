@@ -11,7 +11,7 @@ go get github.com/cheynewallace/tabby
 import "github.com/cheynewallace/tabby"
 ```
 
-Tabby is a tiny (around 70 lines of code) efficient libary for writing extremely simple table based terminal output in GoLang. 
+Tabby is a tiny (around 70 lines of code) efficient libary for writing extremely simple table based terminal output in Golang. 
 
 Many table libraries out there are overly complicated and packed with features you don't need. If you simply want to write clean output to your terminal in table format with minimal effort, Tabby is for you.
 
