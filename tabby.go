@@ -36,7 +36,7 @@ func (t *Tabby) AddLine(args ...interface{}) {
 // AddHeader will write a new table line followed by a seperator
 func (t *Tabby) AddHeader(args ...interface{}) {
 	t.AddLine(args...)
-	t.addSeperator(args)
+	t.addSeparator(args)
 }
 
 // Print will write the table to the terminal
@@ -44,8 +44,8 @@ func (t *Tabby) Print() {
 	t.writer.Flush()
 }
 
-// addSeperator will write a new dash seperator line based on the args length
-func (t *Tabby) addSeperator(args []interface{}) {
+// addSeparator will write a new dash seperator line based on the args length
+func (t *Tabby) addSeparator(args []interface{}) {
 	var b bytes.Buffer
 	for idx, arg := range args {
 		length := len(fmt.Sprintf("%v", arg))
