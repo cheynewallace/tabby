@@ -1,4 +1,5 @@
 [![cover.run](https://cover.run/go/github.com/cheynewallace/tabby.svg?style=flat&tag=golang-1.10)](https://cover.run/go?tag=golang-1.10&repo=github.com%2Fcheynewallace%2Ftabby)
+[![Mentioned in Awesome Go](https://awesome.re/mentioned-badge.svg)](https://github.com/avelino/awesome-go)
 
 # Tabby
 A tiny library for super simple Golang tables
