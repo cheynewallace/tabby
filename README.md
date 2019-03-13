@@ -60,6 +60,7 @@ t := tabby.NewCustom(w)
 ```
 
 ## Full Example
+- Default writer (os.Stdout) example:
 ```go
 package main
 
@@ -67,6 +68,29 @@ import "github.com/cheynewallace/tabby"
 
 func main() {
 	t := tabby.New()
+	t.AddHeader("NAME", "TITLE", "DEPARTMENT")
+	t.AddLine("John Smith", "Developer", "Engineering")
+	t.Print()
+}
+```
+
+- File writer example:
+```go
+package main
+
+import (
+	"os"
+	"text/tabwriter"
+	
+	"github.com/cheynewallace/tabby"
+)
+
+func main() {
+	fd, _ := os.OpenFile("test.txt", os.O_CREATE|os.O_TRUNC|os.O_WRONLY, 0644)
+	defer fd.Close()
+
+	w := tabwriter.NewWriter(fd, 0, 0, 4, ' ', 0)
+	t := tabby.NewCustom(w)
 	t.AddHeader("NAME", "TITLE", "DEPARTMENT")
 	t.AddLine("John Smith", "Developer", "Engineering")
 	t.Print()
