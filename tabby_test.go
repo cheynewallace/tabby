@@ -90,6 +90,6 @@ func BenchmarkFmt(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		var buff bytes.Buffer
 		buff.WriteString("TestString")
-		fmt.Fprintf(fd, buff.String())
+		fmt.Fprintln(fd, buff.String())
 	}
 }
