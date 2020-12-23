@@ -20,11 +20,9 @@ func New() *Tabby {
 	}
 }
 
-// NewCustom returns a new *Tabby with with custom *tabwriter.Writer set
+// NewCustom returns a new *Tabby with custom *tabwriter.Writer set
 func NewCustom(writer *tabwriter.Writer) *Tabby {
-	return &Tabby{
-		writer: writer,
-	}
+	return &Tabby{writer: writer}
 }
 
 // AddLine will write a new table line
@@ -55,7 +53,8 @@ func (t *Tabby) addSeparator(args []interface{}) {
 			b.WriteString("\t")
 		}
 	}
-	fmt.Fprintln(t.writer, b.String())
+	b.WriteString("\n")
+	b.WriteTo(t.writer)
 }
 
 // buildFormatString will build up the formatting string used by the *tabwriter.Writer

@@ -56,3 +56,40 @@ func Test_AddHeader(t *testing.T) {
 		t.Errorf("AddHeader not writing to io.Writer")
 	}
 }
+
+func Test_FileWriter(t *testing.T) {
+	fd, err := os.OpenFile("test.log", os.O_CREATE|os.O_APPEND, 0644)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer fd.Close()
+
+	w := tabwriter.NewWriter(fd, 0, 0, 4, ' ', 0)
+	tabby := NewCustom(w)
+	tabby.AddHeader("NAME", "TITLE", "DEPARTMENT")
+	tabby.AddLine("John Smith", "Developer", "Engineering")
+	tabby.Print()
+}
+
+func BenchmarkBuffer(b *testing.B) {
+	fd, _ := os.OpenFile("temp.txt", os.O_CREATE|os.O_TRUNC|os.O_WRONLY, 0644)
+	defer fd.Close()
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		var buff bytes.Buffer
+		buff.WriteString("TestString")
+		buff.WriteString("\n")
+		buff.WriteTo(fd)
+	}
+}
+
+func BenchmarkFmt(b *testing.B) {
+	fd, _ := os.OpenFile("temp.txt", os.O_CREATE|os.O_TRUNC|os.O_WRONLY, 0644)
+	defer fd.Close()
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		var buff bytes.Buffer
+		buff.WriteString("TestString")
+		fmt.Fprintln(fd, buff.String())
+	}
+}
